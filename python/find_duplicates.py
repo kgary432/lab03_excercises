@@ -4,12 +4,16 @@ def find_duplicates_nested_loop(l: list) -> list:
     # make new list to append into
     duplicates = []
     # nested loop 1
-    for i in range(len(l)):
-        for j in range(i+1, len(l)):
-            if l[i] == l[j]:
+    def findMode(l):
+        seen = set()
+        duplicates = []
+        for i in range(len(l)):
+            if l[i] in seen:
                 duplicates.append(l[i])
-                break
-    return duplicates
+            else:
+                seen.add(l[i])
+        return duplicates
+
 
 if __name__ == "__main__":
     sample1 = [3, 7, 5, 6, 7, 4, 8, 5, 7, 66]
