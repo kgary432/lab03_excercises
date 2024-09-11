@@ -8,7 +8,7 @@ public class FindDuplicates {
         List<Integer> duplicates = new ArrayList<>();    
         
         for (int i=0; i<l.size(); i++) {
-            for (int j=0; j<l.size(); j++) {
+            for (int j=1; j<l.size()+1; j++) {
                 if (l.get(i).equals(l.get(j))) {
                     duplicates.add(l.get(i));
                     break;
